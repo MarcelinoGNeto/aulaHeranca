@@ -26,5 +26,10 @@ public class SavingsAccount extends Account { //extends: herdando da classe Acco
 	public void updateBalance() {
 		balance += balance * interestRate;
 	}
+	
+	@Override //SOBREPOSIÇÃO do método da classe Account 
+	public void withdraw(double amount) {
+		balance -= amount;
+	}
 
 }

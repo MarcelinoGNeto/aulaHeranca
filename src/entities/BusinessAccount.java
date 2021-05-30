@@ -28,4 +28,9 @@ public class BusinessAccount extends Account { //extends define que esta classe 
 		}
 	}
 	
+	@Override //SOBREPOSIÇÃO do método da classe Account 
+	public void withdraw(double amount) {
+		super.withdraw(amount);
+		balance -= 2.0;
+	}
 }
