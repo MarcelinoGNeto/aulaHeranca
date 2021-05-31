@@ -1,7 +1,12 @@
 package entities;
 
-public class Account {
-	
+public abstract class Account { //com abstract, a classe não pode ser instanciada
+//Vantagens:
+/*
+ * Reuso dos métodos nas subclasses;
+ * Polimorfismo: a superclasse classe genérica permite tratar de forma fácil e uniforme
+ * todos os tipos de conta, inclusive com polimorfismo.	
+ */
 	private Integer number;
 	private String holder;
 	protected Double balance; //protegido para ter acesso em outras classes
