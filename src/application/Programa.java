@@ -1,14 +1,26 @@
 package application;
 
 import entities.Account;
-import entities.BusinessAccount;
 import entities.SavingsAccount;
 
 public class Programa {
 
 	public static void main(String[] args) {
 
+// POLIFORMISMO: muitas formas, a mesma operação com comportamentos diferentes, conforme os objetos as quais foram aplicadas.
+
+		Account x = new Account(1020, "Alex", 1000.0);
+		Account y = new SavingsAccount(1023, "Maria", 1000.0, 0.01);
+		
+		x.withdraw(50.0);
+		y.withdraw(50.0);
+		
+		System.out.println(x.getBalance());
+		System.out.println(y.getBalance());
+	
+		
 //SOBREPOSIÇÃO
+/*
 		Account acc1 = new Account(1001, "Alex", 1000.0);
 		acc1.withdraw(200.0);
 		System.out.println(acc1.getBalance());
@@ -20,7 +32,7 @@ public class Programa {
 		Account acc3 = new BusinessAccount(1003, "Bob", 1000.0, 5000.0);
 		acc3.withdraw(200.0);
 		System.out.println(acc3.getBalance());
-		
+*/		
 // CONCEITOS EM HERANÇA:
 /* 
  * Relação: "é um", ex: AccountBusiness é uma Conta
@@ -30,6 +42,9 @@ public class Programa {
  * Herança/Extensão: A classe BusinessAccount extende a classe Account 
  tem tudo que a classe account tem e ainda extende outras funções
  * Herança é uma associação entre classes (e não entre objetos)
+ * 
+ * Palavra chave: final
+ * utilizada por motivo de segurança para impedir que alguma classe ou método a herança
  */
 /*
 		Account acc = new Account(1001, "Alex", 0.0);
